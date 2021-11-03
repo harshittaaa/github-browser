@@ -27,7 +27,7 @@ const Issues = ({username, repo}) => {
             {issues.map((element, index, branches)=>{
                 return(
                    
-                    <div class="row border border-dark mx-1 px-2 py-1" style={style}>
+                    <div className="row border border-dark mx-1 px-2 py-1" style={style}>
                         <div>
                         {element.title.toUpperCase()}
                         </div>

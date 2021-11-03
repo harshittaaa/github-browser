@@ -22,7 +22,7 @@ const Branch = ({username, repo}) => {
         <>
             {branches.map((element, index, branches)=>{
                 return(
-                    <div class="row border border-dark mx-1 px-2">
+                    <div key={index} className="row border border-dark mx-1 px-2">
                         {element.name}
                     </div>
                 );

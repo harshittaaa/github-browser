@@ -34,29 +34,30 @@ const [repo, setRepo] = useState('');
     })
     .then(data=>{
       setRepodata(data);
+      setRepos(data);
     })
     }, [userName]);
 
 
 
-  let initRepoData;
-  if(localStorage.getItem(`${userName}-Repos`)===null)
+  //let initRepoData;
+ /*  if(localStorage.getItem(`${userName}-Repos`)===null)
   {
     initRepoData=repoData;
   }
   else{
     initRepoData= JSON.parse(localStorage.getItem(`${userName}-Repos`));
-  }
+  } */
 
-  const [repos, setRepos] = useState(initRepoData);
+  const [repos, setRepos] = useState(repoData);
     
 
 
-    useEffect(() => {
+    /* useEffect(() => {
       setRepodata(repoData);
       //localStorage.setItem(`${userName}-Repos`, JSON.stringify(repos));
       
-    }, [repoData]);
+    }, [repoData]); */
 
    
 
@@ -83,7 +84,10 @@ const [repo, setRepo] = useState('');
         description: null
       }
 
-      setRepos([...repoData, newRepo]);
+      setRepos([...repos, newRepo]);
+      console.log('newly added repo',newRepo);
+      console.log('changeable repo list',repos);
+      console.log('fetched repo', repoData);
 
     };
     
@@ -119,7 +123,7 @@ const [repo, setRepo] = useState('');
         </div>
         <div className="row border border-dark">
           {/* {repoData} */}
-          <Repos username={userName} user={repoData} selectedRepo={selectedRepo} addNewRepo={addNewRepo}/>
+          <Repos username={userName} user={repos} selectedRepo={selectedRepo} addNewRepo={addNewRepo}/>
           <div className="col-lg border border-dark">
             <div className="row mx-1 my-3" style={{display:'flex', justifyContent:'flex-end'}} >
               <button className="border-0 bg-white" style={{cursor: 'pointer'}} type='button' onClick="" >DELETE</button>

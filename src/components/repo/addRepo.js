@@ -29,17 +29,17 @@ const AddRepo = (props) => {
                           Repository Name
                       </label>
                       <input type="text" id="repo-name" onChange={(e)=>{setName(e.target.value)}}/>
-                    <button class="text-white" type="button" onClick={()=>{addNewRepo()}}>ADD</button>
+                    <button className="text-white" type="button" onClick={()=>{addNewRepo()}}>ADD</button>
                   </form>
             </Dialog>
         );
 
     };
     return (
-        <div class="row border border-dark" style={{padding: '4rem 1rem 1rem 1rem'}}>
+        <div className="row border border-dark" style={{padding: '4rem 1rem 1rem 1rem'}}>
             <Div onClick={()=>{showDialogBox(!dialogBox)}}>
-            <button class="border-0" type="button">
-                <i class="fas fa-plus"></i>
+            <button className="border-0" type="button">
+                <i className="fas fa-plus"></i>
             </button>
             </Div>
 
